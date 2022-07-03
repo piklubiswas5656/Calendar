@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Bengali calendar Pajnika</string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+<!--    month name-->
+    <string name="boyshik">বৈশাখ</string>
+    <string name="jaista">জ্যৈষ্ঠ</string>
+    <string name="ashar">আষাঢ়</string>
+    <string name="sarabon">শ্রাবণ</string>
+    <string name="vadro">ভাদ্র</string>
+    <string name="ashin">আশ্বিন</string>
+    <string name="kartik">কার্তিক</string>
+    <string name="agroyan">অগ্রহায়ণ</string>
+    <string name="pos">পৌষ</string>
+    <string name="magh">মাঘ</string>
+    <string name="falgun">ফাল্গুন</string>
+    <string name="chatro">চৈত্র</string>
+    <!--    month end-->
+
+    <!--    weekly day name-->
+    <string name="robi">রবি</string>
+    <string name="som">সোম</string>
+    <string name="mongol">মঙ্গল</string>
+    <string name="bud">বুধ</string>
+    <string name="brihospoti">বৃহ</string>
+    <string name="sukro">শুক্র</string>
+    <string name="sani">শনি</string>
+    <!--    weekly day name end-->
+</resources>
