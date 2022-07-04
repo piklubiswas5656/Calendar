@@ -1,24 +1,29 @@
 package bengali.calendar.panjika.Adapter;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import bengali.calendar.panjika.Model.DayModel;
+import bengali.calendar.panjika.Conn;
+import bengali.calendar.panjika.MainActivity;
+import bengali.calendar.panjika.Model.AlldayModel;
 import bengali.calendar.panjika.R;
+import bengali.calendar.panjika.ShowCalendarDetailActivity;
 
-public class BoyshikAdapter extends RecyclerView.Adapter<BoyshikAdapter.BoyshikHolder> {
-    private ArrayList<DayModel> data;
+public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.BoyshikHolder> {
+    private ArrayList<AlldayModel> data;
 
-    public BoyshikAdapter(ArrayList<DayModel> data) {
+    public CalendarAdapter(ArrayList<AlldayModel> data) {
         this.data = data;
     }
 
@@ -32,17 +37,30 @@ public class BoyshikAdapter extends RecyclerView.Adapter<BoyshikAdapter.BoyshikH
 
     @Override
     public void onBindViewHolder(@NonNull BoyshikHolder holder, int position) {
-        DayModel model = data.get(position);
-        holder.englisdate.setText(model.getEnglishday());
-        holder.bengalidate.setText(model.getBengaliday());
+        AlldayModel model = data.get(position);
+        holder.englisdate.setText(Conn.monthDate(model.getEnglishdate()));
+        holder.bengalidate.setText(model.getBdate());
         holder.festival.setText(model.getFestival());
         if (position == 0 || position == 7 || position == 14 || position == 21 || position == 28 || position == 35) {
             holder.bengalidate.setTextColor(Color.RED);
         }
-        if ("1".equals(model.getEnglishday())) {
+        if ("1".equals(model.getEnglishdate())) {
             holder.layoutBackgourn.setBackgroundColor(Color.rgb(250, 244, 122));
         }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (model.getEnglishdate().equals("") || model.getEnglishdate() == null) {
 
+                } else {
+                    Intent intent = new Intent(holder.itemView.getContext(), ShowCalendarDetailActivity.class);
+                    intent.putExtra(Conn.Festival, model.getFestival());
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    holder.itemView.getContext().startActivity(intent);
+                }
+
+            }
+        });
 
     }
 

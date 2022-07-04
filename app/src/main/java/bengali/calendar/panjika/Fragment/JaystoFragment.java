@@ -3,11 +3,15 @@ package bengali.calendar.panjika.Fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import bengali.calendar.panjika.Adapter.CalendarAdapter;
+import bengali.calendar.panjika.Conn;
 import bengali.calendar.panjika.R;
 
 /**
@@ -16,7 +20,12 @@ import bengali.calendar.panjika.R;
  * create an instance of this fragment.
  */
 public class JaystoFragment extends Fragment {
+    //var
+    CalendarAdapter adapter;
 
+    //wid
+    private RecyclerView recyclerView;
+    View view;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -61,6 +70,11 @@ public class JaystoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_jaysto, container, false);
+       view = inflater.inflate(R.layout.fragment_jaysto, container, false);
+        recyclerView = view.findViewById(R.id.jaistaRecyclerview);
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 7));
+
+        return view;
     }
+
 }

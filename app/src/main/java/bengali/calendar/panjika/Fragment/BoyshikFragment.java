@@ -12,7 +12,8 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-import bengali.calendar.panjika.Adapter.BoyshikAdapter;
+import bengali.calendar.panjika.Adapter.CalendarAdapter;
+import bengali.calendar.panjika.Conn;
 import bengali.calendar.panjika.Model.DayModel;
 import bengali.calendar.panjika.R;
 
@@ -23,7 +24,7 @@ import bengali.calendar.panjika.R;
  */
 public class BoyshikFragment extends Fragment {
     //var
-    BoyshikAdapter adapter;
+    CalendarAdapter adapter;
 
     //wid
     private RecyclerView recyclerView;
@@ -76,48 +77,10 @@ public class BoyshikFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_boyshik, container, false);
         recyclerView = view.findViewById(R.id.boyshik_recyclerview);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 7));
-        adapter = new BoyshikAdapter(arrayStore());
+        adapter = new CalendarAdapter(Conn.baishikArray());
         recyclerView.setAdapter(adapter);
         return view;
     }
 
-    private ArrayList<DayModel> arrayStore() {
-        ArrayList<DayModel> holder = new ArrayList<>();
-        holder.add(new DayModel("", "", ""));
-        holder.add(new DayModel("", "", ""));
-        holder.add(new DayModel("", "", ""));
-        holder.add(new DayModel("1 Jun", "২", "একাদশীর মাহাত্ম্য ২০২২ এর একাদশীর তালিকা"));
-        holder.add(new DayModel("1 Jun", "৩", "lunch 20.00 | Dinner 60.00 | Travel 60.00 | Doctor 5000.00 | lunch 20.00 | Dinner 60.00 | Travel 60.00 | Doctor 5000.00"));
-        holder.add(new DayModel("1", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী সরস্বতী সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "৩", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("1 Jun", "২", "সরস্বতী"));
-        holder.add(new DayModel("", "", ""));
-        holder.add(new DayModel("", "", ""));
-        return holder;
-    }
+
 }

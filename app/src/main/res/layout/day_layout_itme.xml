@@ -19,8 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="16 Jun"
-            android:textColor="@color/black"
-            android:textSize="18dp" />
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/bengali_date"
@@ -31,7 +30,7 @@
             android:text="২"
             android:textAlignment="center"
             android:textColor="@color/customeblue"
-            android:textSize="40dp"
+            android:textSize="35dp"
             android:textStyle="bold" />
 
         <TextView
@@ -44,7 +43,7 @@
             android:marqueeRepeatLimit="marquee_forever"
             android:scrollHorizontally="true"
             android:singleLine="true"
-            android:text="সরস্বতী"
+            android:text="@string/boyshik"
             android:textColor="@color/black" />
     </LinearLayout>
 
